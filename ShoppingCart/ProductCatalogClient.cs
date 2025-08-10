@@ -1,8 +1,9 @@
 
 using System.Net.Http.Headers;
 using System.Text.Json;
+using ShoppingCart.ShoppingCart;
 
-namespace ShoppingCart.ShoppingCart
+namespace ShoppingCart
 {
     public interface IProductCatalogClient
     {

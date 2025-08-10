@@ -27,7 +27,7 @@ spec:
   type: LoadBalancer
   ports:
     - name: shopping-cart
-      port: 4000
+      port: 5000
       targetPort: 8080
   selector:
     app: shopping-cart

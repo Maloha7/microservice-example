@@ -6,7 +6,7 @@ set -euo pipefail
 # --- Variables ---
 RESOURCE_GROUP="MicroservicesInDotnet"
 LOCATION="northeurope"
-ACR_NAME="malohaacr"
+ACR_NAME="malohacr"
 AKS_NAME="MicroservicesInDotnetAKSCluster"
 
 # --- 1. Create resource group ---

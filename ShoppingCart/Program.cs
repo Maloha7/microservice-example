@@ -1,6 +1,6 @@
-using ShoppingCart.ShoppingCart;
 using Polly;
 using Polly.Extensions.Http;
+using ShoppingCart;
 
 var builder = WebApplication.CreateBuilder(args);
 
