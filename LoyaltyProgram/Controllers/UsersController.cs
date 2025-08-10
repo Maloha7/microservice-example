@@ -9,6 +9,12 @@ namespace LoyaltyProgram.Controllers
         private static readonly IDictionary<int, LoyaltyProgramUser>
             RegisteredUsers = new Dictionary<int, LoyaltyProgramUser>();
 
+        [HttpGet("{userId:int}")]
+        public ActionResult<LoyaltyProgramUser> GetUser(int userId) =>
+            RegisteredUsers.ContainsKey(userId)
+            ? (ActionResult<LoyaltyProgramUser>)Ok(RegisteredUsers[userId])
+            : NotFound();
+
         [HttpPost("")]
         public ActionResult<LoyaltyProgramUser> CreateUser(
                 [FromBody] LoyaltyProgramUser user)
@@ -30,7 +36,8 @@ namespace LoyaltyProgram.Controllers
 
         private LoyaltyProgramUser RegisterUser(LoyaltyProgramUser user)
         {
-            throw new NotImplementedException();
+            var userId = RegisteredUsers.Count;
+            return RegisteredUsers[userId] = user with { Id = userId };
         }
     }
 }
